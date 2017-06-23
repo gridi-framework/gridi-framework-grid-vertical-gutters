@@ -1,0 +1,15 @@
+.#{$grid-column-class-prefix}s-vertical-gutters .#{$grid-column-class-prefix},
+.#{$grid-column-class-prefix}.#{$grid-column-class-prefix}-vertical-gutters {
+    padding-top: ceil(($grid-vertical-gutter / 2));
+    padding-bottom: floor(($grid-vertical-gutter / 2));
+    @if variable-exists(grid-vertical-gutter-for-screens) {
+        @each $screen-prefix, $sizes in get-screens-map() {
+            @if map-has-key($grid-vertical-gutter-for-screens, $screen-prefix) {
+                @media(min-width: get-screen-size($screen-prefix, min)) {
+                    padding-top: ceil((map-get($grid-vertical-gutter-for-screens, $screen-prefix)) / 2);
+                    padding-bottom: floor((map-get($grid-vertical-gutter-for-screens, $screen-prefix) / 2));
+                }
+            }
+        }
+    }
+}
