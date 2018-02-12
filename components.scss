@@ -1,3 +1,4 @@
+.direct-#{$grid-column-class-prefix}s-vertical-gutters > .#{$grid-column-class-prefix},
 .#{$grid-column-class-prefix}s-vertical-gutters .#{$grid-column-class-prefix},
 .#{$grid-column-class-prefix}.#{$grid-column-class-prefix}-vertical-gutters {
     padding-top: ceil(($grid-vertical-gutter / 2));
